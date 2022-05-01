@@ -1,0 +1,15 @@
+rescript = 1
+g_finger := /Users/personal/code/open-source/rescript-drawer/node_modules/@rescript/react/lib/ocaml/install.stamp
+cleaner = /Users/personal/code/open-source/rescript-drawer/node_modules/gentype/gentype.exe
+rule astj
+  command = /Users/personal/code/open-source/rescript-drawer/node_modules/rescript/darwin/bsc.exe  -bs-v 9.1.4 -bs-jsx 3  -absname -bs-ast -o $out $i
+o src/Drawer/Drawer.ast : astj ../../src/Drawer/Drawer.res
+rule deps
+  command = /Users/personal/code/open-source/rescript-drawer/node_modules/rescript/darwin/bsb_helper.exe -hash cc8236cd5baeea3a6630d8fd82a36c37 $in
+  restat = 1
+o src/Drawer/Drawer.d : deps src/Drawer/Drawer.ast
+rule mij
+  command = /Users/personal/code/open-source/rescript-drawer/node_modules/rescript/darwin/bsc.exe -I src/Drawer -I src -I /Users/personal/code/open-source/rescript-drawer/node_modules/@rescript/react/lib/ocaml   -bs-gentype /Users/personal/code/open-source/rescript-drawer/node_modules/gentype/gentype.exe -bs-package-name rescript-drawer -bs-package-output es6:$in_d:.mjs -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/Drawer/Drawer.cmj src/Drawer/Drawer.cmi ../../src/Drawer/Drawer.mjs : mij src/Drawer/Drawer.ast
