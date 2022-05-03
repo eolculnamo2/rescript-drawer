@@ -3,6 +3,7 @@
 import * as Curry from "rescript/lib/es6/curry.js";
 import * as React from "react";
 import * as Helpers from "./helpers";
+import * as DrawerFunctions from "./DrawerFunctions.bs.js";
 import DrawerModuleCss from "./Drawer.module.css";
 
 var styles = DrawerModuleCss;
@@ -11,7 +12,8 @@ var helpers = Helpers;
 
 function Drawer(Props) {
   var children = Props.children;
-  var backgroundColor = Props.backgroundColor;
+  var styleOptions = Props.styleOptions;
+  var internalStyles = DrawerFunctions.getStylesOrDefaults(styleOptions);
   var match = React.useState(function () {
         return false;
       });
@@ -20,7 +22,10 @@ function Drawer(Props) {
   var menuRef = React.useRef(null);
   var drawerRef = React.useRef(null);
   React.useEffect((function () {
-          Curry._2(helpers.setCssVar, "--rs-drawer-primary", backgroundColor);
+          Curry._2(helpers.setCssVar, "--rs-drawer-primary", internalStyles.primary);
+          Curry._2(helpers.setCssVar, "--rs-drawer-secondary", internalStyles.secondary);
+          Curry._2(helpers.setCssVar, "--rs-drawer-font-color", internalStyles.fontColor);
+          Curry._2(helpers.setCssVar, "--rs-drawer-x-color", internalStyles.menuColor);
           var mouseUpCb = function (e) {
             var clickedEl = e.target;
             if (menuRef.current === null || drawerRef.current === null) {

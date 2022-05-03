@@ -20,18 +20,15 @@
 }
 .hamburger-open .line1 {
   transform: rotate(45deg) translateX(7px);
-  background-color: white;
+  background-color: var(--rs-drawer-x-color);;
 }
 .hamburger-open .line2 {
   width: 0;
-  background-color: white;
+  background-color: var(--rs-drawer-x-color);;
 }
 .hamburger-open .line3 {
   transform: rotate(-45deg) translateX(7px);
-  background-color: white;
-}
-.hamburger-white {
-  background-color: var(--rs-drawer-primary);
+  background-color: var(--rs-drawer-x-color);;
 }
 .hamburger-drawer {
   width: 320px;
@@ -41,8 +38,8 @@
   right: -325px;
   height: 100vh;
   background-color: var(--rs-drawer-primary);
-  border-left: 1px solid var(--rs-drawer-primary);
-  color: white;
+  border-left: 1px solid var(--rs-drawer-secondary);
+  color: var(--rs-drawer-font-color);
   transition: all 0.2s;
   box-shadow: -7px 2px 7px rgba(0, 0, 0, 0.5);
   padding: 1em;
@@ -81,6 +78,6 @@
   }
 
   .white-links a {
-    color: var(--rs-drawer-primary);
+    color: var(--rs-drawer-font-color);
   }
 }

@@ -7,9 +7,9 @@ external contains: (Js.Nullable.t<Dom.element>, Dom.element) => bool = "contains
 @val external window: {..} = "window"
 external myShadyConversion: {..} => Dom.element = "%identity"
 
-@react.component
-@genType
-let make = (~children, ~backgroundColor: string) => {
+@react.component @genType
+let make = (~children, ~styleOptions: option<DrawerSharedDefinitions.publicStyles>) => {
+  let internalStyles = DrawerFunctions.getStylesOrDefaults(styleOptions)
   let (isOpen, setOpen) = React.useState(_ => false)
   let menuRef: React.ref<Js.Nullable.t<Dom.element>> = React.useRef(Js.Nullable.null)
   let drawerRef: React.ref<Js.Nullable.t<Dom.element>> = React.useRef(Js.Nullable.null)
@@ -25,7 +25,11 @@ let make = (~children, ~backgroundColor: string) => {
   }
 
   React.useEffect0(() => {
-    helpers["setCssVar"]("--rs-drawer-primary", backgroundColor)
+    helpers["setCssVar"]("--rs-drawer-primary", internalStyles.primary)
+    helpers["setCssVar"]("--rs-drawer-secondary", internalStyles.secondary)
+    helpers["setCssVar"]("--rs-drawer-font-color", internalStyles.fontColor)
+    helpers["setCssVar"]("--rs-drawer-x-color", internalStyles.menuColor)
+
 
     let mouseUpCb = (e: ReactEvent.Mouse.t) =>
       clickOff(ReactEvent.Mouse.target(e)->myShadyConversion)

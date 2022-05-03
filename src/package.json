@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "npm run re:build && tsdx build",
     "re:build": "rescript",
     "re:start": "rescript build -w",
     "test": "tsdx test --passWithNoTests",
