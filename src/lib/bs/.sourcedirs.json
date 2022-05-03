@@ -1,0 +1,1 @@
+{ "dirs" : [ "src" ] , "pkgs" : [ [ "gentype" , "/Users/personal/code/open-source/rescript-drawer/src/node_modules/gentype" ] , [ "@rescript/react" , "/Users/personal/code/open-source/rescript-drawer/src/node_modules/@rescript/react" ] ] , "generated" : [] }

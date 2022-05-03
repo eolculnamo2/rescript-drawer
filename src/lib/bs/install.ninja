@@ -1,0 +1,10 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o Drawer.cmi : cp ../bs/src/Drawer.cmi
+o Drawer.cmj : cp ../bs/src/Drawer.cmj
+o Drawer.cmt : cp ../bs/src/Drawer.cmt
+o Drawer.res : cp ../../src/Drawer.res
+build install.stamp : touch Drawer.cmi Drawer.cmj 
