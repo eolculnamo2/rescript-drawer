@@ -1,0 +1,7 @@
+{
+  "editor.defaultFormatter": null,
+  "files.exclude": {
+    "**/*.mjs": false,
+    "**/*.gen.tsx": false
+  }
+}

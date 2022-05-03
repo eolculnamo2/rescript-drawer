@@ -6,7 +6,7 @@ import { Drawer } from "rescript-drawer";
 function App() {
   return (
     <div className="App">
-      <Drawer backgroundColor="#333">
+      <Drawer>
         <li>Lol</li>
         <li>Lol</li>
         <li>Lol</li>

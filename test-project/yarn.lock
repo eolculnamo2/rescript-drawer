@@ -7345,10 +7345,10 @@ requires-port@^1.0.0:
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
-rescript-drawer@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/rescript-drawer/-/rescript-drawer-0.1.0.tgz#d58cbb2e8f5519f4dc122a07e3d3f0687c37d03f"
-  integrity sha512-+6D9YDIC7VwMVi8dIr/UnqU0VyU68msjH0sR/gBCUUTWU7x/wpU3m6oN4Xd85RiGHGtU1AfyaicTX6ycKU3Nnw==
+rescript-drawer@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/rescript-drawer/-/rescript-drawer-0.1.1.tgz#fbd4295a4ed25ac527e2af9cec616999b96042cd"
+  integrity sha512-gKgMsos/HTdv1ghMZ3+uV0JMMpl7b1xDeI9aZxgW69GzN8l6aQJ5AzrUdwLXYsOVkbeoKx0dyDUYfyekvZmJTw==
   dependencies:
     "@rescript/react" "^0.10.3"
 
