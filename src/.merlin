@@ -5,6 +5,10 @@ B /Users/personal/code/open-source/rescript-drawer/src/node_modules/rescript/lib
 FLG -w +a-4-9-20-40-41-42-50-61-102
 S /Users/personal/code/open-source/rescript-drawer/src/node_modules/@rescript/react/lib/ocaml
 B /Users/personal/code/open-source/rescript-drawer/src/node_modules/@rescript/react/lib/ocaml
+S /Users/personal/code/open-source/rescript-drawer/src/node_modules/@dusty-phillips/rescript-zora/lib/ocaml
+B /Users/personal/code/open-source/rescript-drawer/src/node_modules/@dusty-phillips/rescript-zora/lib/ocaml
+S test
+B lib/bs/test
 S src
 B lib/bs/src
 ####BSB GENERATED: NO EDIT}

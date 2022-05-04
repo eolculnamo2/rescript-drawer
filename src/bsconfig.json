@@ -5,6 +5,11 @@
     {
       "dir": "src",
       "subdirs": true
+    },
+    {
+      "dir": "test",
+      "subdirs": true,
+      "type": "dev"
     }
   ],
   "package-specs": [
@@ -13,9 +18,10 @@
       "in-source": true
     }
   ],
-  "suffix": ".bs.js",
+  "suffix": ".mjs",
   "reason": { "react-jsx": 3 },
   "bs-dependencies": ["@rescript/react"],
+  "bs-dev-dependencies": ["@dusty-phillips/rescript-zora"],
   "gentypeconfig": {
     "language": "typescript",
     "shims": {},

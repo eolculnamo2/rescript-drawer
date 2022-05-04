@@ -1,3 +1,6 @@
+@send
+external contains: (Js.Nullable.t<Dom.element>, Dom.element) => bool = "contains"
+
 let defaultStyles: DrawerSharedDefinitions.internalStyles = {
   primary: "#333",
   secondary: "#333",
@@ -19,4 +22,15 @@ let getStylesOrDefaults: getStylesOrDefaultsType = (publicStyles) => {
   | None => defaultStyles
   }
   
-} 
+}
+
+type shouldCloseOnClickType = (Dom.element, Js.Nullable.t<Dom.element>, Js.Nullable.t<Dom.element>) => bool
+let shouldCloseOnClick: shouldCloseOnClickType = (clickedEl, menu, drawer) => {
+  if menu == Js.Nullable.null || drawer == Js.Nullable.null {
+    true
+  } else if menu->contains(clickedEl) || drawer->contains(clickedEl) {
+    false
+  } else {
+    true
+  }
+}

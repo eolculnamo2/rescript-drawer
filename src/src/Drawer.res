@@ -1,9 +1,6 @@
 @module("./Drawer.module.css") external styles: {..} = "default"
 @module external helpers: {..} = "./helpers"
 
-@send
-external contains: (Js.Nullable.t<Dom.element>, Dom.element) => bool = "contains"
-
 @val external window: {..} = "window"
 external myShadyConversion: {..} => Dom.element = "%identity"
 
@@ -15,12 +12,10 @@ let make = (~children, ~styleOptions: option<DrawerSharedDefinitions.publicStyle
   let drawerRef: React.ref<Js.Nullable.t<Dom.element>> = React.useRef(Js.Nullable.null)
 
   let clickOff = (clickedEl: Dom.element) => {
-    if menuRef.current == Js.Nullable.null || drawerRef.current == Js.Nullable.null {
+    if DrawerFunctions.shouldCloseOnClick(clickedEl, menuRef.current, drawerRef.current) {
       setOpen(_ => false)
-    } else if menuRef.current->contains(clickedEl) || drawerRef.current->contains(clickedEl) {
-      ()
     } else {
-      setOpen(_ => false)
+      ()
     }
   }
 

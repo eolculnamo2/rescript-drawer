@@ -30,4 +30,6 @@ yarn-debug.log*
 yarn-error.log*
 
 *.bs.js
+*.mjs
 *.gen.tsx
+/src/lib/
